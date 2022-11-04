@@ -11,6 +11,10 @@ objects:
   spec:
     # The name of the ClowdEnvironment providing the services
     envName: ${ENV_NAME}
+    kafkaTopics:
+    - replicas: 3
+      partitions: 3
+      topicName: platform.export.requests
     deployments:
     - name: service
       minReplicas: ${{MIN_REPLICAS}}
